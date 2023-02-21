@@ -76,8 +76,19 @@ function brainfuck(code) {
 
         // Prompt for input and set value of cell at pointer to numeric of first character
         else if(code[codePos] == ',') {
-            let inputValue = prompt("Enter a character (Will only take first character ascii char code): ")
-            tape[pntr] = inputValue.charCodeAt(0)
+            let inputValue = 0
+            do {
+                try {
+                    inputValue = parseInt(prompt("Enter a number between 0 and 255 inclusive: "))
+                    if(inputValue < 0 || inputValue > 255) {
+                        alert("ERROR: Input must be a nubmer between 0 and 255 inclusive")
+                    }
+                }
+                catch(err) {
+                    alert("ERROR: Input must be a nubmer between 0 and 255 inclusive")
+                }
+            } while (inputValue < 0 || inputValue > 255);
+            tape[pntr] = inputValue
         }
 
         // Output value of cell at pointer as both numeric and ascii character
