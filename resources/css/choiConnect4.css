@@ -1,0 +1,58 @@
+#connect4 {
+    background-color: rgb(32, 32, 32);
+    height: 100%;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.connect4-winner {
+    height: 2rem;
+}
+
+.connect4-container {
+    z-index: 1;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
+.videoContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100;
+}
+
+table {
+    background-color: blue;
+    margin-bottom: 3rem;
+}
+
+.drop-row th {
+    background-color: blue;
+}
+
+table, th, td {
+  border:1px solid black;
+}
+
+th, td {
+  height: 10vh;
+  width: 10vh;
+  z-index: 2;
+  background-color: white;
+}
+
+th {
+    border-radius: 10vh;
+}

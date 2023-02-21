@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/css/choiStyle.css">
+    <link rel="stylesheet" href="/resources/css/choiTicTacToe.css">
+    <script src="/resources/js/choisauce.js"></script>
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <header>
+        <div class="headImg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('resources/img/choiSauce.png');" alt="">
+            <div class="headTxt">
+                <h1>Tic <span>Tac </span>Toe</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <nav id="navbar">
+            <a href="index.html">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <section id="ttt">
+            <div class="ttt-container">
+                <div class="section-header">
+                    <h1>Tic <span>Tac</span> Toe</h1>
+                </div>
+                <div class="ttt-winner">
+                    <h2 id="winAlert"></h2>
+                </div>
+                <div class="ttt-game">
+                    <table>
+                        <tr>
+                            <th id='A1' class='0' onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onclick="mouseClick(this,0,0)"></th>
+                            <th id='A2' class='0' onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onclick="mouseClick(this,0,1)"></th>
+                            <th id='A3' class='0' onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onclick="mouseClick(this,0,2)"></th>
+                        </tr>
+                        <tr>
+                            <th id='B1' class='0' onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onclick="mouseClick(this,1,0)"></th>
+                            <th id='B2' class='0' onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onclick="mouseClick(this,1,1)"></th>
+                            <th id='B3' class='0' onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onclick="mouseClick(this,1,2)"></th>
+                        </tr>
+                        <tr>
+                            <th id='C1' class='0' onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onclick="mouseClick(this,2,0)"></th>
+                            <th id='C2' class='0' onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onclick="mouseClick(this,2,1)"></th>
+                            <th id='C3' class='0' onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onclick="mouseClick(this,2,2)"></th>
+                        </tr>
+                    </table>
+                    <br>
+                    <button type="button" onclick="clearBoard()">Clear Board</button>
+                </div>
+            </div>
+            <div class="videoContainer">
+                <video muted loop id="background_video">
+                    <source src="fireworksWhiteBg.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+    </main>
+    <script src="/resources/js/ticTacToe.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Bebas Neue");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 28px;
+    font-family: "Bebas Neue";
+    background-color: rgb(32, 32, 32);
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+}
+
+p {
+    font-family: "Sarabun";
+}
+
+/* Header and hero img + hero txt */
+header {
+    height: 100vh;
+}
+
+.headImg {
+    min-height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+}
+
+.headTxt {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    height: 5rem;
+    width: 100rem;
+    z-index: -1;
+}
+
+.headTxt h1 {
+    height:100%;
+    width: 100%;
+}
+
+.headTxt>h1>span {
+    color: rgb(0, 253, 253);
+}
+
+/* Navbar css */
+#navbar {
+    overflow: hidden;
+    background-color: rgb(13, 13, 13);
+    text-align: center;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    transition: top 0.3s;
+    z-index: 2;
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+#navbar a:hover {
+    background-color: #111;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+.section-header {
+    color: white;
+    padding-left: 2rem;
+}
+
+.section-header>h1 {
+    padding-top: 1.5rem;
+}
+
+.section-header>h1>span {
+    color: rgb(0, 253, 253);
+}

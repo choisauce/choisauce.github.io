@@ -1,0 +1,66 @@
+#ttt {
+    background-color: rgb(32, 32, 32);
+    height: 100%;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.ttt-game {
+    margin: auto;
+}
+
+.ttt-container {
+    width: 100vw;
+    z-index: 1;
+}
+
+.ttt-winner {
+    height: 2rem;
+    padding-left: 3rem;
+    color: white;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+/*#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}*/
+
+.videoContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100;
+}
+
+.ttt-game table {
+    margin: auto;
+}
+
+table, th, td {
+  border:1px solid rgb(0, 253, 253);
+}
+th, td {
+  height: 12vh;
+  width: 12vh;
+  font-size:50px;
+  font-family:"arial";
+  color: white;
+}

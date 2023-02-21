@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="/resources/css/choiStyle.css">
+    <link rel="stylesheet" href="/resources/css/choiConnect4.css">
+    <script src="/resources/js/choisauce.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>Connect 4</title>
+</head>
+<body>
+    <header>
+        <div class="headImg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('resources/img/choiSauce.png');" alt="">
+            <div class="headTxt">
+                <h1>Connect <span>4</span></h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <nav id="navbar">
+            <a href="index.html">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <section id="connect4">
+            <div class="connect4-container">
+                <div class="section-header">
+                    <h1>Connect <span>4</span></h1>
+                </div>
+                <div class="connect4-winner">
+                    <h2 id="alertWinner"></h2>
+                </div>
+                <br>
+                <button onclick='clearBoard()'>Clear board</button>
+                <br>
+                <table>
+                    <tr class="drop-row">
+                        <th id='col1' class='0' onmouseover='mouseOver("col1")' onmouseout='mouseOut("col1")' onclick='mouseClick("col1")' style="border:0px"></th>
+                        <th id='col2' class='0' onmouseover='mouseOver("col2")' onmouseout='mouseOut("col2")' onclick='mouseClick("col2")' style="border:0px"></th>
+                        <th id='col3' class='0' onmouseover='mouseOver("col3")' onmouseout='mouseOut("col3")' onclick='mouseClick("col3")' style="border:0px"></th>
+                        <th id='col4' class='0' onmouseover='mouseOver("col4")' onmouseout='mouseOut("col4")' onclick='mouseClick("col4")' style="border:0px"></th>
+                        <th id='col5' class='0' onmouseover='mouseOver("col5")' onmouseout='mouseOut("col5")' onclick='mouseClick("col5")' style="border:0px"></th>
+                        <th id='col6' class='0' onmouseover='mouseOver("col6")' onmouseout='mouseOut("col6")' onclick='mouseClick("col6")' style="border:0px"></th>
+                        <th id='col7' class='0' onmouseover='mouseOver("col7")' onmouseout='mouseOut("col7")' onclick='mouseClick("col7")' style="border:0px"></th>
+                    </tr>
+                    <tr>
+                        <th id='f1' class='0' onmouseover='mouseOver("col1")' onmouseout='mouseOut("col1")' onclick='mouseClick("col1")'></th>
+                        <th id='f2' class='0' onmouseover='mouseOver("col2")' onmouseout='mouseOut("col2")' onclick='mouseClick("col2")'></th>
+                        <th id='f3' class='0' onmouseover='mouseOver("col3")' onmouseout='mouseOut("col3")' onclick='mouseClick("col3")'></th>
+                        <th id='f4' class='0' onmouseover='mouseOver("col4")' onmouseout='mouseOut("col4")' onclick='mouseClick("col4")'></th>
+                        <th id='f5' class='0' onmouseover='mouseOver("col5")' onmouseout='mouseOut("col5")' onclick='mouseClick("col5")'></th>
+                        <th id='f6' class='0' onmouseover='mouseOver("col6")' onmouseout='mouseOut("col6")' onclick='mouseClick("col6")'></th>
+                        <th id='f7' class='0' onmouseover='mouseOver("col7")' onmouseout='mouseOut("col7")' onclick='mouseClick("col7")'></th>
+                    </tr>
+                    <tr>
+                        <th id='e1' class='0' onmouseover='mouseOver("col1")' onmouseout='mouseOut("col1")' onclick='mouseClick("col1")'></th>
+                        <th id='e2' class='0' onmouseover='mouseOver("col2")' onmouseout='mouseOut("col2")' onclick='mouseClick("col2")'></th>
+                        <th id='e3' class='0' onmouseover='mouseOver("col3")' onmouseout='mouseOut("col3")' onclick='mouseClick("col3")'></th>
+                        <th id='e4' class='0' onmouseover='mouseOver("col4")' onmouseout='mouseOut("col4")' onclick='mouseClick("col4")'></th>
+                        <th id='e5' class='0' onmouseover='mouseOver("col5")' onmouseout='mouseOut("col5")' onclick='mouseClick("col5")'></th>
+                        <th id='e6' class='0' onmouseover='mouseOver("col6")' onmouseout='mouseOut("col6")' onclick='mouseClick("col6")'></th>
+                        <th id='e7' class='0' onmouseover='mouseOver("col7")' onmouseout='mouseOut("col7")' onclick='mouseClick("col7")'></th>
+                    </tr>
+                    <tr>
+                        <th id='d1' class='0' onmouseover='mouseOver("col1")' onmouseout='mouseOut("col1")' onclick='mouseClick("col1")'></th>
+                        <th id='d2' class='0' onmouseover='mouseOver("col2")' onmouseout='mouseOut("col2")' onclick='mouseClick("col2")'></th>
+                        <th id='d3' class='0' onmouseover='mouseOver("col3")' onmouseout='mouseOut("col3")' onclick='mouseClick("col3")'></th>
+                        <th id='d4' class='0' onmouseover='mouseOver("col4")' onmouseout='mouseOut("col4")' onclick='mouseClick("col4")'></th>
+                        <th id='d5' class='0' onmouseover='mouseOver("col5")' onmouseout='mouseOut("col5")' onclick='mouseClick("col5")'></th>
+                        <th id='d6' class='0' onmouseover='mouseOver("col6")' onmouseout='mouseOut("col6")' onclick='mouseClick("col6")'></th>
+                        <th id='d7' class='0' onmouseover='mouseOver("col7")' onmouseout='mouseOut("col7")' onclick='mouseClick("col7")'></th>
+                    </tr>
+                    <tr>
+                        <th id='c1' class='0' onmouseover='mouseOver("col1")' onmouseout='mouseOut("col1")' onclick='mouseClick("col1")'></th>
+                        <th id='c2' class='0' onmouseover='mouseOver("col2")' onmouseout='mouseOut("col2")' onclick='mouseClick("col2")'></th>
+                        <th id='c3' class='0' onmouseover='mouseOver("col3")' onmouseout='mouseOut("col3")' onclick='mouseClick("col3")'></th>
+                        <th id='c4' class='0' onmouseover='mouseOver("col4")' onmouseout='mouseOut("col4")' onclick='mouseClick("col4")'></th>
+                        <th id='c5' class='0' onmouseover='mouseOver("col5")' onmouseout='mouseOut("col5")' onclick='mouseClick("col5")'></th>
+                        <th id='c6' class='0' onmouseover='mouseOver("col6")' onmouseout='mouseOut("col6")' onclick='mouseClick("col6")'></th>
+                        <th id='c7' class='0' onmouseover='mouseOver("col7")' onmouseout='mouseOut("col7")' onclick='mouseClick("col7")'></th>
+                    </tr>
+                    <tr>
+                        <th id='b1' class='0' onmouseover='mouseOver("col1")' onmouseout='mouseOut("col1")' onclick='mouseClick("col1")'></th>
+                        <th id='b2' class='0' onmouseover='mouseOver("col2")' onmouseout='mouseOut("col2")' onclick='mouseClick("col2")'></th>
+                        <th id='b3' class='0' onmouseover='mouseOver("col3")' onmouseout='mouseOut("col3")' onclick='mouseClick("col3")'></th>
+                        <th id='b4' class='0' onmouseover='mouseOver("col4")' onmouseout='mouseOut("col4")' onclick='mouseClick("col4")'></th>
+                        <th id='b5' class='0' onmouseover='mouseOver("col5")' onmouseout='mouseOut("col5")' onclick='mouseClick("col5")'></th>
+                        <th id='b6' class='0' onmouseover='mouseOver("col6")' onmouseout='mouseOut("col6")' onclick='mouseClick("col6")'></th>
+                        <th id='b7' class='0' onmouseover='mouseOver("col7")' onmouseout='mouseOut("col7")' onclick='mouseClick("col7")'></th>
+                    </tr>
+                    <tr>
+                        <th id='a1' class='0' onmouseover='mouseOver("col1")' onmouseout='mouseOut("col1")' onclick='mouseClick("col1")'></th>
+                        <th id='a2' class='0' onmouseover='mouseOver("col2")' onmouseout='mouseOut("col2")' onclick='mouseClick("col2")'></th>
+                        <th id='a3' class='0' onmouseover='mouseOver("col3")' onmouseout='mouseOut("col3")' onclick='mouseClick("col3")'></th>
+                        <th id='a4' class='0' onmouseover='mouseOver("col4")' onmouseout='mouseOut("col4")' onclick='mouseClick("col4")'></th>
+                        <th id='a5' class='0' onmouseover='mouseOver("col5")' onmouseout='mouseOut("col5")' onclick='mouseClick("col5")'></th>
+                        <th id='a6' class='0' onmouseover='mouseOver("col6")' onmouseout='mouseOut("col6")' onclick='mouseClick("col6")'></th>
+                        <th id='a7' class='0' onmouseover='mouseOver("col7")' onmouseout='mouseOut("col7")' onclick='mouseClick("col7")'></th>
+                    </tr>
+                </table>
+            </div>
+            <div class="videoContainer">
+                <video muted loop id="winner-video">
+                    <source src="fireworksWhiteBg.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+    </main>
+    <script src="/resources/js/connect4.js"></script>
+</body>
+</html>

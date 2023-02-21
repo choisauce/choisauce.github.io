@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/css/choiStyle.css">
+    <link rel="stylesheet" href="/resources/css/choiBrainfuck.css">
+    <script src="/resources/js/choisauce.js"></script>
+    <title>Brainfuck</title>
+</head>
+<body>
+    <header>
+        <div class="headImg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('resources/img/choiSauce.png');" alt="">
+            <div class="headTxt">
+                <h1>Brain<span>fuck</span></h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <nav id="navbar">
+            <a href="index.html">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <section id="brainfuck">
+            <section id="brainfuck-main">
+                <div class="section-header">
+                    <h1>brainfuck <span>Interpretor</span></h1>
+                </div>
+                <div class="brainfuck-interpretor">
+                    <div class="brainfuck-code-wrapper">
+                        <div class="brainfuck-code">
+                            <textarea id='code' name='code' rows="16" cols="50" style="resize: none;"></textarea>
+                            <br>
+                            <button type="button" onclick="brainfuck(document.getElementById('code').value)">Execute Brainfuck Code</button>
+                        </div>
+                    </div>
+                    <div class="section-header">
+                        <h1>Tape</h1>
+                    </div>
+                    <div class="brainfuck-cells">
+                        <table>
+                            <tr>
+                                <th style="width:10rem; border:0px; text-align:center; font-size: 1rem;">Cells</th>
+                                <th id='a'></th>
+                                <th id='b'></th>
+                                <th id='c' style="background-color:lightgray; color: black;"></th>
+                                <th id='d'></th>
+                                <th id='e'></th>
+                            </tr>
+                            <tr>
+                                <th style="width:10rem; border:0px; text-align:center; font-size: 1rem;">Tape Index</th>
+                                <td id='locA'></td>
+                                <td id='locB'></td>
+                                <td id='locC' style="background-color:lightgray; color: black;"></td>
+                                <td id='locD'></td>
+                                <td id='locE'></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="section-header">
+                        <h1>Output</h1>
+                    </div>
+                    <div class="brainfuck-output">
+                        <p>Numeric output: <span id="output"></span></p>
+                        <p>Ascii output: <span id="outputAscii"></span></p>
+                    </div>
+                </div>
+            </section>
+            <section id="brainfuck-info">
+                <div class="section-header">
+                    <h1>About <span>Brainfuck</span></h1>
+                </div>
+                <div class="brainfuck-info-wrapper">
+                    <p>Brainfuck is a Turing Complete esoteric programming language (esolang) designed by Urban Müller in 1993. As an esolang, it has little practical purpose in programming however is a good langauge to challenge programmers to think of their programs in different ways. Brainfuck has an infinitely long tape with cells that can hold values from 0 - 255 however in practice the tape will not be infinitely long and the tape used in this interpretor is 256 cells long. The language consists of 8 characters which are used to manipulate the tape.</p>
+                </div>
+            </section>
+            <section id="brainfuck-how-to-use">
+                <div class="brainfuck-how">
+                    <div class="section-header">
+                        <h1>How to <span>use</span></h1>
+                    </div>
+                    <div class="brainfuck-how-table">
+                        <div class="brainfuck-how-text">
+                            <p>Input the code you want to be executed by the interpretor in the prompt at the top of the page then click "Execute Brainfuck code" to execute your program. Inputs will be entered as a prompt from the browser. Outputs will be shown as both it's ascii code and character</p>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>></th>
+                                <td style="width:375px">Shift the tape one position to the right</td>
+                            </tr>
+                            <tr>
+                                <th><</th>
+                                <td>Shift the tape one position to the left</td>
+                            </tr>
+                            <tr>
+                                <th>+</th>
+                                <td>Increment current cell by 1</td>
+                            </tr>
+                            <tr>
+                                <th>-</th>
+                                <td>Decrement current cell by 1</td>
+                            </tr>
+                            <tr>
+                                <th>,</th>
+                                <td>Input then store a character's ascii code</td>
+                            </tr>
+                            <tr>
+                                <th>.</th>
+                                <td>Output value of current cell</td>
+                            </tr>
+                            <tr>
+                                <th>[</th>
+                                <td>Loop code is current cell is not 0</td>
+                            </tr>
+                            <tr>
+                                <th>]</th>
+                                <td>End of loop</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+    </main>
+
+    <script src="/resources/js/brainfuck.js"></script>
+</body>
+</html>

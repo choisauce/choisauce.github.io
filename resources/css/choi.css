@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Bebas Neue");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 28px;
+    font-family: "Bebas Neue";
+    background-color: rgb(32, 32, 32);
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Header and hero img + hero txt */
+header {
+    height: 100vh;
+}
+
+.headImg {
+    min-height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+}
+
+.headTxt {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    height: 5rem;
+    width: 100rem;
+    z-index: -1;
+}
+
+.headTxt h1 {
+    height:100%;
+    width: 100%;
+}
+
+/* Navbar css */
+#navbar {
+    overflow: hidden;
+    background-color: rgb(13, 13, 13);
+    text-align: center;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    transition: top 0.3s;
+    z-index: 2;
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+#navbar a:hover {
+    background-color: #111;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+#about-me {
+    background-color: rgb(32, 32, 32);
+}
+
+.about-container {
+    padding-top: 3rem;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about-image {
+    margin: auto;
+    width: 375px;
+    aspect-ratio: 1/1;
+    border-radius: 15px;
+}
+
+.about-text {
+    margin: auto;
+    padding: 1rem 1rem;
+}
+
+.about-header {
+    color: white;
+}
+
+.about-header>h1>span {
+    color: rgb(0, 223, 223);
+}
+
+.about-body {
+    font-family: 'Courier New', Courier, monospace;
+    color:rgb(0, 223, 223);
+    padding-left: .5rem;
+}
+
+.about-body>ul {
+    list-style-type: none;
+}
+
+@media only screen and (max-width: 801px) {
+    .about-container {
+        display: block;
+        grid-template-columns: none;
+        margin: auto;
+    }
+
+    .about-image {
+        float: right;
+        margin-right: 1rem;
+    }
+}
+
+/* Portfolio grid display */
+#projects {
+    background-color: rgb(32, 32, 32);
+}
+
+.section-header {
+    padding-left: 2rem;
+    color: white;
+}
+
+.section-header>h1>span {
+    color: rgb(0, 223, 223);
+}
+
+#jsProjects {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+    "cd1 cd2 cd3"
+    "cd4 cd5 cd6";
+}
+
+#brainf {
+    grid-area: cd1;
+}
+
+#connect4 {
+    grid-area: cd2;
+}
+
+#ticTacToe {
+    grid-area: cd3;
+}
+
+#ex1 {
+    grid-area: cd4;
+}
+
+#ex2 {
+    grid-area: cd5;
+}
+
+#ex3 {
+    grid-area: cd6;
+}
+
+/* Style Project Portfolio */
+.content-container {
+    height: 100%;
+    width: 100vw;
+    overflow: hidden;
+    background-color: rgb(32, 32, 32);
+    position: relative;
+}
+
+.card {
+    overflow: hidden;
+    width: 25vw;
+    aspect-ratio: 2/3;
+    background-color: rgb(35, 35, 35);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 10px rgba(0, 255, 255);
+    transition: all 0.2 ease-in-out;
+}
+
+.image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s linear;
+}
+
+.card:hover .image {
+    filter: brightness(60%) blur(1.5px);
+    transform: scale(1.25);
+}
+
+.card-cover {
+    width: 100%;
+    height: 25%;
+    background-color: rgba(0, 0, 0, .8);
+    transition: all 0.3s linear;
+    transform: translate(0%, 0%);
+    padding: .5rem 1rem;
+    border-radius: 5px;
+}
+
+.card:hover .card-cover {
+    transform: translate(0%, -100%);
+}
+
+.card-header {
+    font-weight: bold;    
+    font-size: 40px;
+    color: rgba(255, 255, 255);
+    font-family: "Bebas Neue";
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.card-container a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    #jsProjects {
+        grid-template-areas:
+        "cd1 cd2"
+        "cd3 cd4"
+        "cd5 cd6";
+    }
+    .card {
+        width: 40vw;
+    }
+
+}
+
+@media only screen and (min-width: 1100px) {
+    .card {
+        width: 275px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #jsProjects {
+        grid-template-areas:
+        "cd1 cd2 cd3 cd4 cd5 cd6";
+    }
+    
+    .card {
+        width: 275px;
+    }
+}
