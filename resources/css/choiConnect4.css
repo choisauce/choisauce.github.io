@@ -36,6 +36,7 @@
 table {
     background-color: blue;
     margin-bottom: 3rem;
+    aspect-ratio: 1/1;
 }
 
 .drop-row th {
