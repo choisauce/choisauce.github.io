@@ -36,13 +36,15 @@ function mouseClick(cell,x,y) {
             break
         }
     }
-    if(board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
-        win = board[1][1]
+    if(win == 0) {
+        if(board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+            win = board[1][1]
+        }
+        else if(board[2][0] == board[1][1] && board[1][1] == board[0][2]) {
+            win = board[1][1]
+        }
+        let turnIs = (turn == 1) ? whoWin.innerHTML = "Turn: X": whoWin.innerHTML = "Turn: O"
     }
-    else if(board[2][0] == board[1][1] && board[1][1] == board[0][2]) {
-        win = board[1][1]
-    }
-    let turnIs = (turn == 1) ? whoWin.innerHTML = "Turn: X": whoWin.innerHTML = "Turn: O"
     if(win != 0) {
         let winner = (win == 1) ? whoWin.innerHTML = "X is the winner!": whoWIn.innerHTML = "O is the winner!"
         video.play()
