@@ -29,11 +29,15 @@ function mouseClick(cell,x,y) {
     for(let i in board) {
         if(board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
             win = board[i][0]
-            break
+            if(win != 0) {
+                break
+            }
         }
         else if(board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
             win = board[0][i]
-            break
+            if(win !=0) {
+                break
+            }
         }
     }
     if(win == 0) {
